@@ -1,9 +1,11 @@
 <resources>
-    <string name="app_name">World Tour</string>
-    <string name="right">Correctas</string>
-    <string name="wrong">Incorrectas</string>
-    <string name="prev">Anterior</string>
-    <string name="nxtquestion">Proxima Pregunta</string>
-    <string name="next">Dame otra pista.</string>
-    <string name="quizzend">No hay mas preguntas.</string>
+    <string name="app_name" translatable="false">World Tour</string>
+    <string name="right">Right</string>
+    <string name="wrong">Wrong</string>
+    <string name="prev">Previous</string>
+    <string name="nxtquestion">Next Question</string>
+    <string name="next">Other tip</string>
+    <string name="quizzend">No more questions</string>
+    <string name="whichCity">Which City is This?</string>
+    <string name="button" translatable="false">Button</string>
 </resources>

@@ -1,18 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".MainActivity">
-
-
+    <!--Parent Layout-->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        >
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:orientation="vertical">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/whichCity"
+            android:textAlignment="center"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/imgCity"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:adjustViewBounds="true"
+            android:baselineAlignBottom="false"
+            android:contentDescription="questionCity"
+            android:cropToPadding="true"
+            android:scaleType="centerInside"
+            android:src="@drawable/florence1" />
+
+        <!--Answers buttons-->
+        <Button
+            android:id="@+id/btnOption1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="btnOptionClicked"
+            android:tag="0"
+            android:text="@string/button" />
+
+        <Button
+            android:id="@+id/btnOption2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="btnOptionClicked"
+            android:tag="1"
+            android:text="@string/button" />
+
+        <Button
+            android:id="@+id/btnOption3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="btnOptionClicked"
+            android:tag="2"
+            android:text="@string/button" />
+
+        <Button
+            android:id="@+id/btnOption4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="btnOptionClicked"
+            android:tag="3"
+            android:text="@string/button" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorPrimary"
+            android:baselineAligned="false"></LinearLayout>
+        <!--other tip and next question button-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnNext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="btnNextClicked"
+                    android:text="@string/next" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnNxtQuestion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="btnNxtQuestionClicked"
+                    android:text="@string/nxtquestion" />
+            </LinearLayout>
+        </LinearLayout>
+        <!--Layout for Scores-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -22,145 +111,22 @@
                 android:id="@+id/lblRigth"
                 android:layout_width="1dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="0.5"
                 android:background="#4CAF50"
-                android:fontFamily="sans-serif-light"
                 android:text="@string/right"
                 android:textAlignment="center"
-                android:textAppearance="?android:textAppearanceLarge"
                 android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/lblWrong"
                 android:layout_width="1dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="0.5"
                 android:background="#C62828"
-                android:fontFamily="sans-serif-light"
                 android:text="@string/wrong"
                 android:textAlignment="center"
-                android:textAppearance="?android:textAppearanceLarge"
                 android:textSize="24sp" />
 
-
         </LinearLayout>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Which City is This?"
-            android:textSize="20sp"
-            android:textAlignment="center"/>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp">
-
-            <ImageView
-                android:id="@+id/imgCity"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:adjustViewBounds="true"
-                android:cropToPadding="true"
-                android:scaleType="centerInside"
-                android:src="@drawable/florence1" />
-
-        </LinearLayout>
-
-        <!--next & prev photo button-->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:orientation="horizontal">
-
-
-            <Button
-                android:id="@+id/btnNext"
-                android:layout_width="1dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="btnNextClicked"
-                android:padding="2dp"
-                android:text="@string/next"
-                android:textSize="20sp" />
-
-        </LinearLayout>
-
-        <!--answer buttons-->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/btnOption1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="btnOptionClicked"
-                android:padding="8dp"
-                android:tag="0"
-                android:text="Button"
-                android:textSize="20sp" />
-
-            <Button
-                android:id="@+id/btnOption2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="btnOptionClicked"
-                android:padding="8dp"
-                android:tag="1"
-                android:text="Button"
-                android:textSize="20sp" />
-
-            <Button
-                android:id="@+id/btnOption3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="btnOptionClicked"
-                android:padding="8dp"
-
-                android:tag="2"
-                android:text="Button"
-                android:textSize="20sp" />
-
-            <Button
-                android:id="@+id/btnOption4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="btnOptionClicked"
-                android:padding="8dp"
-                android:tag="3"
-                android:text="Button"
-                android:textSize="20sp" />
-
-
-        </LinearLayout>
-
-        <!--next question button-->
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <Button
-                android:id="@+id/btnNxtQuestion"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:onClick="btnNxtQuestionClicked"
-                android:padding="4dp"
-                android:text="@string/nxtquestion"
-                android:textSize="20sp" />
-        </RelativeLayout>
-
     </LinearLayout>
-
-
 </ScrollView>

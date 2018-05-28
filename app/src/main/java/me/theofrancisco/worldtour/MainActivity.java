@@ -1,14 +1,13 @@
 package me.theofrancisco.worldtour;
 
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -17,7 +16,6 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
     private ArrayList<String> altAnswers = new ArrayList<>();
     private ArrayList<Question> questions = new ArrayList<>();
-    private ArrayList<Button> btnOptions = new ArrayList<>();
 
     class Question {
         int[] images = new int[3];
@@ -42,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     private Question currentQuestion;
     private int posCorrectAnswer = 0;
     private Button[] answerButtons = new Button[5];
-    private boolean questionFinished=false;
+    private boolean questionFinished = false;
     private boolean quizzEnd = false;
 
     private void initApp() {
@@ -89,21 +87,21 @@ public class MainActivity extends AppCompatActivity {
 
         String b = (String) view.getTag();
         int op = Integer.parseInt(b);
-        Button btn = (Button)findViewById(view.getId());
-        if (op==posCorrectAnswer){
+        Button btn = findViewById(view.getId());
+        if (op == posCorrectAnswer) {
             btn.setBackgroundColor(Color.parseColor("#66BB6A"));
             right++;
-            questionFinished=true;
-        }else{
+            questionFinished = true;
+        } else {
             wrong++;
             btn.setBackgroundColor(Color.parseColor("#E57373"));
         }
         updatePoints();
     }
 
-    private void updatePoints(){
-        lblRight.setText(getResources().getText(R.string.right)+":"+ right+"");
-        lblWrong.setText(getResources().getText(R.string.wrong)+":"+ wrong);
+    private void updatePoints() {
+        lblRight.setText(getResources().getText(R.string.right) + ":" + right + "");
+        lblWrong.setText(getResources().getText(R.string.wrong) + ":" + wrong);
     }
 
     public void btnNextClicked(View view) {
@@ -114,19 +112,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void btnNxtQuestionClicked(View view) {
-        if (questionFinished){
-            questionFinished=false;
+        if (questionFinished) {
+            questionFinished = false;
             //restore background color for buttons to default
-            for (int i=0;i<4;i++)
+            for (int i = 0; i < 4; i++)
                 answerButtons[i].setBackgroundResource(android.R.drawable.btn_default);
 
             if (++questionIndex < questions.size()) {
                 currentQuestion = questions.get(questionIndex);
                 showQuestion();
             } else {
-                quizzEnd=true;
+                quizzEnd = true;
                 Button b = findViewById(R.id.btnNxtQuestion);
-                b.setText (R.string.quizzend);
+                b.setText(R.string.quizzend);
             }
         }
     }
@@ -147,16 +145,16 @@ public class MainActivity extends AppCompatActivity {
         int btnIndex = 0;
         int optIndex = 0;
         //Set the rest 3 buttons
-        for (int i=0;i<3;i++){
+        for (int i = 0; i < 3; i++) {
             //jump the correct answer button
-            if (btnIndex==posCorrectAnswer) btnIndex++;
+            if (btnIndex == posCorrectAnswer) btnIndex++;
             //get an alternative answer
             String altAnswer = altAnswers.get(optIndex++);
             //if that answer is the same as the correct answer, then get the next
-            if (altAnswer.equals(currentQuestion.answer)){
+            if (altAnswer.equals(currentQuestion.answer)) {
                 altAnswer = altAnswers.get(optIndex++);
             }
-            answerButtons[btnIndex++].setText( altAnswer );
+            answerButtons[btnIndex++].setText(altAnswer);
         }
     }
 }
