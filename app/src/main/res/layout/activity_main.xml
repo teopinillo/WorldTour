@@ -2,131 +2,187 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    tools:context=".MainActivity">
-    <!--Parent Layout-->
-    <LinearLayout
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="me.theofrancisco.worldtour.MainActivity">
+
+    <!--Outer Layout-->
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
-        android:orientation="vertical">
+        android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/txtQuestion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/whichCity"
             android:textAlignment="center"
-            android:textSize="16sp" />
+            android:textColor="#ff0000ff"
+            android:textSize="20sp" />
 
         <ImageView
             android:id="@+id/imgCity"
+            android:layout_height="match_parent"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_below="@id/txtQuestion"
             android:adjustViewBounds="true"
-            android:baselineAlignBottom="false"
-            android:contentDescription="questionCity"
             android:cropToPadding="true"
             android:scaleType="centerInside"
             android:src="@drawable/florence1" />
 
-        <!--Answers buttons-->
-        <Button
-            android:id="@+id/btnOption1"
+
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/radioGroup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="btnOptionClicked"
-            android:tag="0"
-            android:text="@string/button" />
+            android:layout_below="@id/imgCity"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/btnOption2"
+            <RadioButton
+                android:id="@+id/btnOption1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/button"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/btnOption2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/button"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/btnOption3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/button"
+                android:textSize="16sp" />
+        </RadioGroup>
+
+
+        <!--Check Box Button-->
+        <!--Facts about the city-->
+        <TextView
+            android:id="@+id/txtTrueFacts"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="btnOptionClicked"
-            android:tag="1"
-            android:text="@string/button" />
-
-        <Button
-            android:id="@+id/btnOption3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="btnOptionClicked"
-            android:tag="2"
-            android:text="@string/button" />
-
-        <Button
-            android:id="@+id/btnOption4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="btnOptionClicked"
-            android:tag="3"
-            android:text="@string/button" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
+            android:layout_below="@id/radioGroup"
+            android:gravity="center_horizontal"
+            android:padding="2dp"
             android:background="@color/colorPrimary"
-            android:baselineAligned="false"></LinearLayout>
-        <!--other tip and next question button-->
+            android:text="True Facts About This City"
+            android:textColor="#FFFFFFFF"
+            android:textSize="16sp" />
+
+        <!--Four check buttons in a vertical layout-->
         <LinearLayout
+            android:id="@+id/layoutChkBoxs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_below="@id/txtTrueFacts"
+            android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="0dp"
+            <CheckBox
+                android:id="@+id/checkBox1"
+                android:layout_width="match_parent"
+                android:tag="4"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="horizontal">
+                android:text="Very Long String with two rows" />
 
-                <Button
-                    android:id="@+id/btnNext"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:onClick="btnNextClicked"
-                    android:text="@string/next" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
+            <CheckBox
+                android:id="@+id/checkBox2"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="horizontal">
+                android:tag="5"
+                android:text="Very Long String with two rows" />
 
-                <Button
-                    android:id="@+id/btnNxtQuestion"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:onClick="btnNxtQuestionClicked"
-                    android:text="@string/nxtquestion" />
-            </LinearLayout>
+            <CheckBox
+                android:id="@+id/checkBox3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:tag="6"
+                android:text="Very Long String with two rows" />
+
+            <CheckBox
+                android:id="@+id/checkBox4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:tag="7"
+                android:text="Very Long String with two rows" />
+
         </LinearLayout>
-        <!--Layout for Scores-->
+
+        <!--EditText for Country-->
         <LinearLayout
+            android:id="@+id/layoutCountry"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/layoutChkBoxs"
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/lblRigth"
-                android:layout_width="1dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.5"
-                android:background="#4CAF50"
-                android:text="@string/right"
-                android:textAlignment="center"
-                android:textSize="24sp" />
+                android:text="@string/country" />
 
-            <TextView
-                android:id="@+id/lblWrong"
-                android:layout_width="1dp"
+            <EditText
+                android:id="@+id/editCountry"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.5"
-                android:background="#C62828"
-                android:text="@string/wrong"
-                android:textAlignment="center"
-                android:textSize="24sp" />
+                android:ellipsize="end"
+                android:inputType="text" />
 
         </LinearLayout>
-    </LinearLayout>
+
+        <!--Commands Buttons-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/layoutCountry"
+            android:orientation="horizontal">
+
+            <!--next question button-->
+
+            <!--next & prev photo button-->
+            <Button
+                android:id="@+id/btnOtherTip"
+                android:layout_width="0dp"
+                android:layout_weight="0.33"
+                android:layout_height="wrap_content"
+                android:onClick="btnOtherTipClicked"
+                android:padding="2dp"
+                android:text="@string/next"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btnNxtQuestion"
+                android:layout_width="0dp"
+                android:layout_weight="0.33"
+                android:layout_height="wrap_content"
+                android:onClick="btnNxtQuestionClicked"
+                android:text="@string/nxtquestion"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btnSubmit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.33"
+                android:onClick="btnSubmitClicked"
+                android:text="@string/submit"
+                android:textSize="20sp" />
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
 </ScrollView>

@@ -3,9 +3,62 @@
     <string name="right">Right</string>
     <string name="wrong">Wrong</string>
     <string name="prev">Previous</string>
-    <string name="nxtquestion">Next Question</string>
+    <string name="nxtquestion">Next</string>
     <string name="next">Other tip</string>
     <string name="quizzend">No more questions</string>
     <string name="whichCity">Which City is This?</string>
     <string name="button" translatable="false">Button</string>
+    <string name="score">Score:</string>
+    <string name="check">Check</string>
+    <string name="submit">Submit</string>
+    <string name="country">"Country: "</string>
+    <string name="italy">Italy</string>
+    <string name="vietnam" translatable="false">Viet Nam</string>
+    <string name="cuba" translatable="false">Cuba</string>
+    <string name="usa">USA</string>
+    <string name="india" translatable="false">India</string>
+    <string name="polish">Czech Republic</string>
+    <string name="sweden">Sweden</string>
+    <string name="florence_fact_1" translatable="false">Nearly a third of the world’s art treasures reside in this city.</string>
+    <string name="florence_fact_2" translatable="false">In 1339 became the first city in all of Europe with paved streets.</string>
+    <string name="florence_fact_3" translatable="false">Pinocchio, the wooden boy whose nose grows when he lies, came from this city.</string>
+    <string name="florence_fact_4" translatable="false">The emblem of the city is a red lily.</string>
+
+    <string name="hoian_fact_1" translatable="false">The official language is Vietnamese.</string>
+    <string name="hoian_fact_2" translatable="false">The city name means \"peaceful meeting place\"</string>
+    <string name="hoian_fact_3" translatable="false">Became the first town in Asia to offer free wifi.</string>
+    <string name="hoian_fact_4" translatable="false">Is close to the ocean and to many beaches and fishing villages</string>
+
+    <string name="havana_fact_1" translatable="false">Hemingway Lived Here.</string>
+    <string name="havana_fact_2" translatable="false">Is known for its rum and tobacco.</string>
+    <string name="havana_fact_3" translatable="false">There is a statue of John Lennon from The Beatles.</string>
+    <string name="havana_fact_4" translatable="false">The Bolero, Mambo and Cha Cha was invented in the country.</string>
+
+    <string name="hongkong_fact_1" translatable="false">Means Fragrant Harbor</string>
+    <string name="hongkong_fact_2" translatable="false">Has more Rolls Royce’s per person than any other city in the world.</string>
+    <string name="hongkong_fact_3" translatable="false">Has the most skyscrapers in the world; double of New York City</string>
+    <string name="hongkong_fact_4" translatable="false">Its architects take Feng Shui into consideration in the design and construction of buildings.</string>
+
+    <string name="miami_fact_1" translatable="false">Is home to the world’s largest collection of art deco architecture. </string>
+    <string name="miami_fact_2" translatable="false">was once a mangrove swamp and the land we now know was mostly man made. </string>
+    <string name="miami_fact_3" translatable="false">Sun tan lotion was invented here</string>
+    <string name="miami_fact_4" translatable="false">Gets its name from one of the tribes that lived here. </string>
+
+    <string name="mumbai_fact_1" translatable="false">Was once an archipelago of 7 islands</string>
+    <string name="mumbai_fact_2" translatable="false">has a coastline of about 150 kilometres</string>
+    <string name="mumbai_fact_3" translatable="false"> is the birthplace of the author of The Jungle Book</string>
+    <string name="mumbai_fact_4" translatable="false">There is only 1.1 square metres of open space for people living</string>
+
+
+    <string name="prague_fact_1" translatable="false">Has the largest castle in the world</string>
+    <string name="prague_fact_2" translatable="false">There is a graffiti wall devoted to John Lennon.</string>
+    <string name="prague_fact_3" translatable="false">You’ve probably heard of its famous Astronomical Clock</string>
+    <string name="prague_fact_4" translatable="false">The locals drink more beer per capita than any other nation in the world </string>
+
+    <string name="stockholm_fact_1" translatable="false">Is often known as the ‘World’s Smallest Big City’ or the ‘World’s Biggest Small Town’.</string>
+    <string name="stockholm_fact_2" translatable="false">The city’s subway is also known as the world’s longest art gallery</string>
+    <string name="stockholm_fact_3" translatable="false">The city is sometimes referred to as ‘Venice of the North’</string>
+    <string name="stockholm_fact_4" translatable="false">one of the world’s  cleanest metropolises</string>
+
+
 </resources>

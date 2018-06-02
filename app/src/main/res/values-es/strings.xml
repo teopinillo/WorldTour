@@ -8,4 +8,12 @@
     <string name="next">Dame otra pista.</string>
     <string name="quizzend">No hay mas preguntas.</string>
     <string name="whichCity">Que ciudad es esta?</string>
+    <string name="score">Puntos:</string>
+    <string name="check">Comprobar</string>
+    <string name="submit">Comprobar</string>
+    <string name="country">"Pais: "</string>
+    <string name="italy">Italia</string>
+    <string name="usa">Estados Unidos</string>
+    <string name="polish">Republica Checa</string>
+    <string name="sweden">Suiza</string>
 </resources>
