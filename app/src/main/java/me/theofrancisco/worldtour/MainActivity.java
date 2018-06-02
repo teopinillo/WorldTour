@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
 
+//!--(c)teopinillo jun/2018--
 
 public class MainActivity extends AppCompatActivity {
 
